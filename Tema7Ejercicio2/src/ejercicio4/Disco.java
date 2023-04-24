@@ -25,11 +25,15 @@ public class Disco {
 	/**
 	 * Atributo que guarda el genero del disco
 	 */
-	private String genero = "";
+	private Genero genero;
 	/**
 	 * Atributo que guarda la duracion del disco
 	 */
 	private int duracion;
+	
+	enum Genero {
+		Rock, Pop, Electronica, Reggaeton
+	}
 
 	private static Scanner sca = new Scanner(System.in);
 
@@ -53,7 +57,7 @@ public class Disco {
 		this.codigo = codigo;
 		this.autor = autor;
 		this.titulo = titulo;
-		this.genero = genero;
+		this.genero = Genero.valueOf(genero);
 		this.duracion = duracion;
 	}
 
@@ -104,21 +108,19 @@ public class Disco {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-
+	
 	/**
-	 * Getter del genero
-	 * @return
+	 * @return the genero
 	 */
-	public String getGenero() {
+	public Genero getGenero() {
 		return genero;
 	}
 
 	/**
-	 * Setter del genero
-	 * @param genero
+	 * @param genero the genero to set
 	 */
 	public void setGenero(String genero) {
-		this.genero = genero;
+		this.genero = Genero.valueOf(genero);
 	}
 
 	/**
